@@ -1,0 +1,42 @@
+.photo-card {
+  padding:10px;
+
+  font-size: 12px;
+  border-top: 1px solid gainsboro;
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__header {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__title {
+    display:inline;
+
+    color: #333;
+    font-size: 16px;
+    word-break: break-all;
+  }
+
+  &__link {
+  }
+
+  &__author {
+  }
+
+  &__description {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__tags {
+    width: 100%;
+    padding: 10px 0;
+
+    word-break: break-all;
+  }
+
+}

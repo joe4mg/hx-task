@@ -1,0 +1,38 @@
+<%
+var authorRegex = /\(([^)]+)\)/;
+function removePhotoChunk(url) {
+    var arr = url.split('/');
+    arr.splice(arr.length -2, 2);
+    return( arr.join('/') );
+}
+%>
+<% for(var i = 0; i < items.length; ++i) {%>
+
+    <div class="photo-stream__photo">
+        <div class="photo-card">
+            <a href="<%=items[i].link%>">
+                <img class="photo-card__image" src="<%=items[i].media.m%>" alt="<%=items[i].title%>"/>
+            </a>
+            <div class="photo-card__header">
+                <h2 class="photo-card__title">
+                    <a class="photo-card__link" href="<%=items[i].link%>">
+                        <%=items[i].title%>
+                    </a>
+                </h2>
+                by
+                <a href="<%= removePhotoChunk(items[i].link) %>" class="photo-card__author">
+                    <%= authorRegex.exec(items[i].author)[1] %>
+                </a>
+            </div>
+            <!--
+            <div class="photo-card__description">
+                <%-items[i].description%>
+            </div>
+            -->
+            <div class="photo-card__tags">
+                <%= items[i].tags ? 'Tags: ' + items[i].tags : 'No tags available' %>
+            </div>
+        </div>
+    </div>
+
+<% } %>

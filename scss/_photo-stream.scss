@@ -1,0 +1,29 @@
+@import "clearfix";
+
+.photo-stream {
+  padding-bottom: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+  @include clearfix;
+
+  display:flex;
+  flex-wrap: wrap;
+
+  &__photo{
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom:10px;
+
+    width: 100%;
+
+    @media (min-width: 500px) {
+      flex: 1 0 33.33%;
+      width: 33.33%;
+    }
+    @media (min-width: 800px) {
+      flex: 1 0 25%;
+      width: 25%;
+    }
+  }
+}
